@@ -1,0 +1,13 @@
+{
+  "name": "redirect-loop-guide",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Interactive player guide for Redirect Loop.",
+  "scripts": {
+    "dev": "node scripts/serve.mjs . 4175",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs dist 4176",
+    "test": "node --test tests/*.test.mjs"
+  }
+}

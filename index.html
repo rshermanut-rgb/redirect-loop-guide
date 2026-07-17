@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0a0f1d">
+    <meta name="description" content="An interactive, screenshot-rich player guide for the browser factory game Redirect Loop.">
+    <meta property="og:title" content="Redirect Loop — Player Guide">
+    <meta property="og:description" content="Build your first factory, complete the Foundry contract, and understand every control.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rshermanut-rgb.github.io/redirect-loop-guide/">
+    <meta property="og:image" content="https://rshermanut-rgb.github.io/redirect-loop-guide/assets/screenshots/03-functioning-factory.png">
+    <title>Redirect Loop — Interactive Player Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to the guide</a>
+
+    <header class="site-header">
+      <a class="brand" href="#start" aria-label="Redirect Loop player guide home">
+        <span class="brand-mark" aria-hidden="true">RL</span>
+        <span>
+          <strong>REDIRECT LOOP</strong>
+          <small>PLAYER FIELD GUIDE</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+        Guide menu <span aria-hidden="true">▾</span>
+      </button>
+
+      <nav id="site-navigation" class="site-navigation" aria-label="Guide sections">
+        <a href="#quick-start">Quick start</a>
+        <a href="#controls">Controls</a>
+        <a href="#walkthrough">Walkthrough</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+        <a href="#accessibility">Accessibility</a>
+      </nav>
+
+      <a class="button button-primary header-play" href="https://rshermanut-rgb.github.io/redirect-loop/">Play game</a>
+    </header>
+
+    <main id="main-content">
+      <section id="start" class="hero section-shell" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Official prototype walkthrough</p>
+          <h1 id="hero-title">Build the line.<br><span>Read the sky.</span></h1>
+          <p class="hero-intro">A spoiler-safe guide to your first Redirect Loop factory: power an iron line, move real items, complete the Foundry’s fixed contract, and understand Meridian’s response.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://rshermanut-rgb.github.io/redirect-loop/">Play Redirect Loop</a>
+            <a class="button button-secondary" href="https://github.com/rshermanut-rgb/redirect-loop">Game on GitHub</a>
+          </div>
+          <dl class="release-facts" aria-label="Release facts">
+            <div><dt>Platform</dt><dd>Desktop browser</dd></div>
+            <div><dt>Input</dt><dd>Keyboard + mouse</dd></div>
+            <div><dt>Scenario</dt><dd>One handcrafted run</dd></div>
+          </dl>
+        </div>
+
+        <figure class="hero-shot">
+          <button class="screenshot-button" type="button" data-caption="Redirect Loop’s opening screen. Choose New Game with the arrow keys and Enter, or click it." aria-label="Open the Redirect Loop opening-screen screenshot">
+            <img src="assets/screenshots/01-opening-screen.png" width="480" height="270" alt="Redirect Loop title screen with New Game, Controls, and Audio or Accessibility options">
+            <span>Open screenshot</span>
+          </button>
+          <figcaption>Everything begins from one quiet island.</figcaption>
+        </figure>
+      </section>
+
+      <section id="quick-start" class="section-shell" aria-labelledby="quick-start-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">60-second briefing</p>
+            <h2 id="quick-start-title">The route at a glance</h2>
+          </div>
+          <a class="text-link" href="#walkthrough">Open the guided build ↓</a>
+        </div>
+
+        <ol class="route-strip" aria-label="Factory route overview">
+          <li><span>01</span><strong>Power</strong><small>Biomass Generator</small></li>
+          <li><span>02</span><strong>Extract</strong><small>Iron Extractor</small></li>
+          <li><span>03</span><strong>Process</strong><small>Smelter</small></li>
+          <li><span>04</span><strong>Store</strong><small>Storage</small></li>
+          <li><span>05</span><strong>Deliver</strong><small>Trade Station</small></li>
+        </ol>
+
+        <div class="quick-grid">
+          <div class="briefing-panel">
+            <h3>Your objective</h3>
+            <p>Build one powered iron-production line, deliver <strong>4 Metal Plates</strong> to the Foundry Compact, then observe Meridian Research. The objective line along the bottom of the game leads you through the same sequence.</p>
+            <ul class="signal-list">
+              <li>Stay at <kbd>1</kbd>× while placing your first buildings.</li>
+              <li>Put machines on one horizontal line.</li>
+              <li>Leave exactly one tile for each Conveyor.</li>
+              <li>Point every Conveyor <strong>east</strong> in this layout.</li>
+            </ul>
+          </div>
+
+          <figure>
+            <button class="screenshot-button" type="button" data-caption="The release begins with a Headquarters, one iron deposit, and the first objective in the lower HUD." aria-label="Open the first-objective screenshot">
+              <img src="assets/screenshots/02-first-objective.png" width="480" height="270" alt="Starting island with player Headquarters, Meridian sensor, Foundry buildings, and objective Build a Biomass Generator">
+              <span>Open screenshot</span>
+            </button>
+            <figcaption>The lower HUD always tells you the next safe objective.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="controls" class="section-shell" aria-labelledby="controls-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Input reference</p>
+            <h2 id="controls-title">Controls without the clutter</h2>
+          </div>
+          <label class="select-label" for="control-filter">
+            Show controls for
+            <select id="control-filter">
+              <option value="essential">Essentials</option>
+              <option value="building">Building</option>
+              <option value="camera">Camera</option>
+              <option value="time">Time and menus</option>
+              <option value="all">Everything</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="control-panels">
+          <article class="control-panel" data-control-group="essential">
+            <h3>Essentials</h3>
+            <dl class="key-list">
+              <div><dt><kbd>B</kbd></dt><dd>Open or close the build menu</dd></div>
+              <div><dt><kbd>Left click</kbd></dt><dd>Select or place</dd></div>
+              <div><dt><kbd>Esc</kbd></dt><dd>Cancel, close, or pause</dd></div>
+              <div><dt><kbd>Space</kbd></dt><dd>Pause or resume</dd></div>
+              <div><dt><kbd>G</kbd></dt><dd>Hide or restore objectives</dd></div>
+              <div><dt><kbd>O</kbd></dt><dd>Open audio and accessibility</dd></div>
+            </dl>
+          </article>
+
+          <article class="control-panel" data-control-group="building" hidden>
+            <h3>Building</h3>
+            <dl class="key-list">
+              <div><dt><kbd>1</kbd>–<kbd>6</kbd></dt><dd>Choose a build item while the menu is open</dd></div>
+              <div><dt><kbd>R</kbd></dt><dd>Rotate a Conveyor clockwise</dd></div>
+              <div><dt><kbd>Shift</kbd>+<kbd>R</kbd></dt><dd>Rotate a Conveyor counterclockwise</dd></div>
+              <div><dt><kbd>Right click</kbd></dt><dd>Cancel the current item</dd></div>
+              <div><dt><kbd>T</kbd></dt><dd>Accept the Foundry offer after selecting its building</dd></div>
+            </dl>
+            <p class="panel-note">Buildings do not rotate. A fresh Conveyor session starts facing east.</p>
+          </article>
+
+          <article class="control-panel" data-control-group="camera" hidden>
+            <h3>Camera and inspection</h3>
+            <dl class="key-list">
+              <div><dt><kbd>WASD</kbd></dt><dd>Move the camera</dd></div>
+              <div><dt><kbd>Arrows</kbd></dt><dd>Move the camera</dd></div>
+              <div><dt><kbd>Middle drag</kbd></dt><dd>Drag the camera directly</dd></div>
+              <div><dt><kbd>Hover</kbd></dt><dd>Inspect a tile</dd></div>
+              <div><dt><kbd>Left click</kbd></dt><dd>Keep a tile, machine, or faction building selected</dd></div>
+            </dl>
+          </article>
+
+          <article class="control-panel" data-control-group="time" hidden>
+            <h3>Time, menus, and options</h3>
+            <dl class="key-list">
+              <div><dt><kbd>1</kbd> / <kbd>2</kbd></dt><dd>Normal or double speed when the build menu is closed</dd></div>
+              <div><dt><kbd>Space</kbd></dt><dd>Open the pause menu</dd></div>
+              <div><dt><kbd>O</kbd></dt><dd>Open or close options</dd></div>
+              <div><dt><kbd>1</kbd> / <kbd>2</kbd></dt><dd>Cycle music or effects volume in options</dd></div>
+              <div><dt><kbd>3</kbd> / <kbd>4</kbd></dt><dd>Toggle reduced flash or reduced motion in options</dd></div>
+            </dl>
+            <p class="panel-note">The clock’s pause, 1×, and 2× markers can also be clicked.</p>
+          </article>
+        </div>
+
+        <details class="inline-disclosure">
+          <summary>Opening menu and mouse-only alternatives</summary>
+          <div class="disclosure-copy">
+            <p>On the opening screen, use the arrow keys or <kbd>W</kbd>/<kbd>S</kbd>, then <kbd>Enter</kbd>. Every opening item is also clickable. In play, the small <strong>B</strong> marker opens the build menu, the cancel marker closes placement, and the Foundry contract prompt can be clicked instead of pressing <kbd>T</kbd>.</p>
+          </div>
+        </details>
+      </section>
+
+      <section id="walkthrough" class="section-shell" aria-labelledby="walkthrough-title">
+        <div class="section-heading walkthrough-heading">
+          <div>
+            <p class="eyebrow">Guided construction</p>
+            <h2 id="walkthrough-title">Build the reliable factory</h2>
+          </div>
+          <div class="progress-box">
+            <span id="progress-label">0 of 7 steps complete</span>
+            <progress id="guide-progress" max="7" value="0">0 of 7</progress>
+            <div class="progress-actions">
+              <button id="continue-guide" class="text-button" type="button">Continue guide</button>
+              <button id="reset-progress" class="text-button muted" type="button">Reset</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="factory-layout" aria-labelledby="layout-title">
+          <div>
+            <p class="eyebrow">Recommended footprint</p>
+            <h3 id="layout-title">One row, one-tile gaps, eastbound belts</h3>
+            <p>The Extractor, Smelter, Storage, and Trade Station each occupy 2 × 2 tiles. Align their lower rows so every fixed item port meets the Conveyor beside it.</p>
+          </div>
+          <pre aria-label="Factory layout diagram"><span>[ EXTRACTOR ]</span>  &gt;  <span>[ SMELTER ]</span>  &gt;  <span>[ STORAGE ]</span>  &gt;  <span>[ TRADE ]</span>
+     ORE            PLATES            PLATES           4/4 CARGO
+
+               ALL CONVEYORS POINT EAST  →</pre>
+        </div>
+
+        <div class="walkthrough-list">
+          <details class="walkthrough-step" data-step="1" open>
+            <summary><span class="step-number">01</span><span><strong>Start the world</strong><small>Find the objective and the iron deposit</small></span><span class="step-state">Not done</span></summary>
+            <div class="step-body">
+              <div>
+                <p>Choose <strong>New Game</strong>. You begin with a Headquarters, one marked iron deposit, and enough construction supplies for the intended route.</p>
+                <p>Keep the game at 1× while learning placement. The bottom objective line can be hidden or restored with <kbd>G</kbd>.</p>
+                <button class="complete-step" type="button" data-complete-step="1" aria-pressed="false">Mark step complete</button>
+              </div>
+              <figure>
+                <button class="screenshot-button" type="button" data-caption="Your starting island. The cyan mineral mark near the player area is the only claimable iron deposit." aria-label="Open the starting-world screenshot">
+                  <img src="assets/screenshots/02-first-objective.png" width="480" height="270" alt="Starting island and first build objective">
+                  <span>Open screenshot</span>
+                </button>
+              </figure>
+            </div>
+          </details>
+
+          <details class="walkthrough-step" data-step="2">
+            <summary><span class="step-number">02</span><span><strong>Build power</strong><small>One Generator supplies the entire starter line</small></span><span class="step-state">Not done</span></summary>
+            <div class="step-body text-only-step">
+              <div>
+                <ol>
+                  <li>Press <kbd>B</kbd>.</li>
+                  <li>Choose the Biomass Generator with <kbd>1</kbd>.</li>
+                  <li>Place it on any clear ground near the player area.</li>
+                </ol>
+                <p>The Generator needs no cables and no fuel deliveries. Its 4 power is exactly enough for one Extractor and one Smelter.</p>
+                <button class="complete-step" type="button" data-complete-step="2" aria-pressed="false">Mark step complete</button>
+              </div>
+              <aside class="success-box"><strong>Success looks like</strong><span>The power readout has capacity available. Nothing needs to connect physically to the Generator.</span></aside>
+            </div>
+          </details>
+
+          <details class="walkthrough-step" data-step="3">
+            <summary><span class="step-number">03</span><span><strong>Place the Extractor</strong><small>Claim the single iron deposit</small></span><span class="step-state">Not done</span></summary>
+            <div class="step-body text-only-step">
+              <div>
+                <ol>
+                  <li>Open the build menu and choose the Iron Extractor with <kbd>2</kbd>.</li>
+                  <li>Cover the cyan iron deposit with any part of its 2 × 2 footprint.</li>
+                  <li>Place only when the preview is green.</li>
+                </ol>
+                <p>Powered Extractors create Ore internally. The Ore waits there until a correctly aligned Conveyor can collect it.</p>
+                <button class="complete-step" type="button" data-complete-step="3" aria-pressed="false">Mark step complete</button>
+              </div>
+              <aside class="success-box"><strong>Success looks like</strong><span>Select the Extractor. It should report <em>Powered</em> and alternate between producing and briefly waiting.</span></aside>
+            </div>
+          </details>
+
+          <details class="walkthrough-step" data-step="4">
+            <summary><span class="step-number">04</span><span><strong>Smelt and store</strong><small>Connect three machines with east-facing Conveyors</small></span><span class="step-state">Not done</span></summary>
+            <div class="step-body">
+              <div>
+                <ol>
+                  <li>Place the Smelter east of the Extractor, with a one-tile gap.</li>
+                  <li>Put one east-facing Conveyor in the gap beside the buildings’ lower row.</li>
+                  <li>Place Storage east of the Smelter in the same way.</li>
+                  <li>Fill that second gap with another east-facing Conveyor.</li>
+                </ol>
+                <p>The Smelter consumes 2 Ore and produces 1 Metal Plate. Waiting states are normal while physical items travel.</p>
+                <button class="complete-step" type="button" data-complete-step="4" aria-pressed="false">Mark step complete</button>
+              </div>
+              <figure>
+                <button class="screenshot-button" type="button" data-caption="A functioning player factory during the released scenario. Machines share a horizontal row and the belts meet their lower ports." aria-label="Open the functioning-factory screenshot">
+                  <img src="assets/screenshots/03-functioning-factory.png" width="480" height="270" alt="Functioning factory with Generator, Extractor, Smelter, Storage, and connected Conveyors">
+                  <span>Open screenshot</span>
+                </button>
+              </figure>
+            </div>
+          </details>
+
+          <details class="walkthrough-step" data-step="5">
+            <summary><span class="step-number">05</span><span><strong>Accept the Foundry offer</strong><small>Unlock the one Trade Station</small></span><span class="step-state">Not done</span></summary>
+            <div class="step-body text-only-step">
+              <div>
+                <p>The orange Foundry settlement expands automatically. Around 04:00 it broadcasts <strong>Foundry Trade Ready</strong>.</p>
+                <ol>
+                  <li>Select any Foundry-owned building.</li>
+                  <li>Confirm the HUD offer: <strong>4 PLT &gt; 2 CIR +1</strong>.</li>
+                  <li>Press <kbd>T</kbd> or click <strong>Accept Contract</strong>.</li>
+                </ol>
+                <p>Acceptance unlocks one Trade Station. It does not remove or reserve any Plates.</p>
+                <button class="complete-step" type="button" data-complete-step="5" aria-pressed="false">Mark step complete</button>
+              </div>
+              <aside class="contract-box" aria-label="Foundry contract summary">
+                <span>Deliver</span><strong>4 Metal Plates</strong><span>Receive</span><strong>2 Circuits + 1 standing</strong><small>One contract per run</small>
+              </aside>
+            </div>
+          </details>
+
+          <details class="walkthrough-step" data-step="6">
+            <summary><span class="step-number">06</span><span><strong>Load the Trade Station</strong><small>Let four physical Plates dispatch automatically</small></span><span class="step-state">Not done</span></summary>
+            <div class="step-body">
+              <div>
+                <ol>
+                  <li>Open the build menu and choose the unlocked Trade Station with <kbd>6</kbd>.</li>
+                  <li>Place it east of Storage, aligned on the same row with a one-tile gap.</li>
+                  <li>Add one east-facing Conveyor in the final gap.</li>
+                </ol>
+                <p>At 4/4 Plates, the station dispatches automatically. Delivery arrives after 30 simulation ticks. Extra Plates remain in Storage.</p>
+                <button class="complete-step" type="button" data-complete-step="6" aria-pressed="false">Mark step complete</button>
+              </div>
+              <figure>
+                <button class="screenshot-button" type="button" data-caption="The selected Trade Station is accepted and loading. Its west input takes Metal Plates only." aria-label="Open the Foundry-trade screenshot">
+                  <img src="assets/screenshots/04-foundry-trade.png" width="480" height="270" alt="Trade Station loading Metal Plates in the player factory">
+                  <span>Open screenshot</span>
+                </button>
+              </figure>
+            </div>
+          </details>
+
+          <details class="walkthrough-step" data-step="7">
+            <summary><span class="step-number">07</span><span><strong>Watch Meridian</strong><small>The Research response is automatic</small></span><span class="step-state">Not done</span></summary>
+            <div class="step-body">
+              <div>
+                <p>After the successful trade, Meridian schedules one observation response. It occurs no earlier than 06:00; a late completion waits another 20 simulation ticks.</p>
+                <p>Select the tall cyan sensor near the top-center of the island. It changes from <strong>Monitoring</strong> to <strong>Unusual Reading</strong>. No Research command is required.</p>
+                <button class="complete-step" type="button" data-complete-step="7" aria-pressed="false">Mark step complete</button>
+              </div>
+              <figure>
+                <button class="screenshot-button" type="button" data-caption="Meridian records a noisy high-altitude return after the completed Foundry trade." aria-label="Open the Meridian-scan screenshot">
+                  <img src="assets/screenshots/05-meridian-scan.png" width="480" height="270" alt="Meridian sensor selected while reporting a noisy high-altitude return">
+                  <span>Open screenshot</span>
+                </button>
+              </figure>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="troubleshooting" class="section-shell" aria-labelledby="troubleshooting-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Field repairs</p>
+            <h2 id="troubleshooting-title">If the line stops</h2>
+          </div>
+          <div class="accordion-actions">
+            <button id="expand-problems" class="text-button" type="button">Expand all</button>
+            <button id="collapse-problems" class="text-button muted" type="button">Collapse all</button>
+          </div>
+        </div>
+
+        <div id="problem-list" class="problem-list">
+          <details>
+            <summary>My placement preview stays red</summary>
+            <div><p>Use open land and avoid roads, trees, faction territory, reserved Foundry space, and occupied tiles. Only the Iron Extractor may cover the one cyan iron deposit. Wait for a green preview before clicking.</p></div>
+          </details>
+          <details>
+            <summary>Items are not moving</summary>
+            <div><p>For the recommended line, every Conveyor must point east and sit in the one-tile gap beside each machine’s lower row. Machines never pass items directly to one another. Select a Conveyor; <strong>Invalid Output</strong> usually means its direction or port alignment is wrong.</p></div>
+          </details>
+          <details>
+            <summary>A machine is unpowered</summary>
+            <div><p>Build the Biomass Generator first. It supplies exactly enough power for the required Extractor and Smelter. There are no wires and no fuel route to build.</p></div>
+          </details>
+          <details>
+            <summary>The Trade Station is still locked</summary>
+            <div><p>Wait for <strong>Foundry Trade Ready</strong>, select a Foundry-owned building, then press <kbd>T</kbd> or click the contract prompt. The station cannot be built before acceptance.</p></div>
+          </details>
+          <details>
+            <summary>The number keys changed game speed</summary>
+            <div><p>The number keys select buildings only while the build menu is open. With the menu closed, <kbd>1</kbd> and <kbd>2</kbd> control simulation speed.</p></div>
+          </details>
+          <details>
+            <summary>The top resource counters are not increasing</summary>
+            <div><p>Those counters are construction supplies at Headquarters. Produced Ore and Plates live inside machines, Conveyors, Storage, and Trade Station cargo. Select an object to inspect its local inventory.</p></div>
+          </details>
+          <details>
+            <summary>I overspent my construction Plates</summary>
+            <div><p>There is no demolition, refund, or undo. The starting wallet safely funds the intended route and up to eight Conveyors. Press <kbd>Space</kbd>, choose <strong>Restart New Game</strong>, and confirm if the route cannot be completed.</p></div>
+          </details>
+          <details>
+            <summary>I cannot hear anything</summary>
+            <div><p>Click or press a key inside the game first; browsers require a player gesture before audio begins. Then press <kbd>O</kbd> and check music and effects volume.</p></div>
+          </details>
+        </div>
+      </section>
+
+      <section id="accessibility" class="section-shell" aria-labelledby="accessibility-title">
+        <div class="accessibility-grid">
+          <div>
+            <p class="eyebrow">Comfort settings</p>
+            <h2 id="accessibility-title">Tune the signal</h2>
+            <p>Press <kbd>O</kbd> during play, or choose <strong>Audio / Accessibility</strong> from the opening or pause menu.</p>
+            <dl class="settings-list">
+              <div><dt><kbd>1</kbd></dt><dd>Music volume: 0 / 25 / 50 / 75 / 100</dd></div>
+              <div><dt><kbd>2</kbd></dt><dd>Effects volume: 0 / 25 / 50 / 75 / 100</dd></div>
+              <div><dt><kbd>3</kbd></dt><dd>Reduced flash on or off</dd></div>
+              <div><dt><kbd>4</kbd></dt><dd>Reduced motion on or off</dd></div>
+            </dl>
+            <p class="panel-note">These settings change presentation only. They never change simulation timing, factory output, or the ending deadline.</p>
+          </div>
+          <figure>
+            <button class="screenshot-button" type="button" data-caption="The pause menu provides Controls, Audio and Accessibility, and a confirmed clean restart." aria-label="Open the pause and accessibility screenshot">
+              <img src="assets/screenshots/11-pause-accessibility.png" width="480" height="270" alt="Redirect Loop pause menu with Controls and Audio or Accessibility entries">
+              <span>Open screenshot</span>
+            </button>
+            <figcaption>Comfort controls are available before and during play.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="spoilers" class="spoiler-vault section-shell" aria-labelledby="spoiler-title">
+        <div class="vault-door">
+          <div>
+            <p class="eyebrow warning-eyebrow">Restricted timeline</p>
+            <h2 id="spoiler-title">Story spoiler vault</h2>
+            <p>The remaining events are best experienced inside the game. This section reveals the complete warning schedule, catastrophe, ending, and restart rules.</p>
+          </div>
+          <button id="begin-spoiler-reveal" class="button button-warning" type="button" aria-expanded="false" aria-controls="spoiler-confirmation">Reveal options</button>
+        </div>
+
+        <div id="spoiler-confirmation" class="spoiler-confirmation" hidden>
+          <p><strong>Final warning:</strong> the next section contains major visual and story spoilers.</p>
+          <div>
+            <button id="confirm-spoilers" class="button button-warning" type="button">Reveal everything</button>
+            <button id="cancel-spoilers" class="button button-secondary" type="button">Keep it hidden</button>
+          </div>
+        </div>
+
+        <div id="spoiler-content" class="spoiler-content" hidden>
+          <div class="spoiler-intro">
+            <div>
+              <p class="eyebrow warning-eyebrow">Complete release timeline</p>
+              <h3>One unavoidable tragic run</h3>
+            </div>
+            <button id="hide-spoilers" class="text-button" type="button">Hide spoilers</button>
+          </div>
+
+          <div class="timeline" aria-label="Catastrophe timeline">
+            <div><time>07:00</time><strong>Sensor pulse</strong><span>Meridian registers the first clear anomaly.</span></div>
+            <div><time>07:15</time><strong>Sky shift</strong><span>The atmosphere changes and reports conflict.</span></div>
+            <div><time>07:30</time><strong>Shadow pass</strong><span>A moving shadow crosses the island.</span></div>
+            <div><time>07:45</time><strong>Signal breakup</strong><span>Interference escalates across the interface.</span></div>
+            <div><time>07:46</time><strong>Asteroid visible</strong><span>The approaching object enters view.</span></div>
+            <div><time>07:52</time><strong>Impact</strong><span>Gameplay freezes exactly at impact.</span></div>
+            <div><time>07:53</time><strong>Ending</strong><span>The game offers one clean new start.</span></div>
+          </div>
+
+          <div class="spoiler-gallery">
+            <figure>
+              <button class="screenshot-button" type="button" data-caption="Warning escalation: the moving shadow and stronger signal treatment arrive while the factory remains playable." aria-label="Open the warning-escalation screenshot">
+                <img src="assets/screenshots/06-warning-escalation.png" width="480" height="270" alt="Factory island under warning effects with a moving shadow notice">
+                <span>Open screenshot</span>
+              </button>
+              <figcaption>Warnings escalate without stopping production.</figcaption>
+            </figure>
+            <figure>
+              <button class="screenshot-button" type="button" data-caption="The asteroid first becomes visible at 07:46 on the fixed release timeline." aria-label="Open the asteroid-visible screenshot">
+                <img src="assets/screenshots/07-asteroid-visible.png" width="480" height="270" alt="Pixel-art asteroid appearing above the factory island">
+                <span>Open screenshot</span>
+              </button>
+              <figcaption>The object becomes visible at 07:46.</figcaption>
+            </figure>
+            <figure>
+              <button class="screenshot-button" type="button" data-caption="Near impact: normal controls and factory systems remain active through the final pre-impact ticks." aria-label="Open the near-impact screenshot">
+                <img src="assets/screenshots/08-near-impact.png" width="480" height="270" alt="Large asteroid immediately above the factory island moments before impact">
+                <span>Open screenshot</span>
+              </button>
+              <figcaption>The final approach remains fully deterministic.</figcaption>
+            </figure>
+            <figure>
+              <button class="screenshot-button" type="button" data-caption="The terminal destroyed world. No economy or player commands continue after impact." aria-label="Open the destroyed-world screenshot">
+                <img src="assets/screenshots/09-destroyed-world.png" width="480" height="270" alt="Destroyed factory world after the asteroid impact">
+                <span>Open screenshot</span>
+              </button>
+              <figcaption>The simulation stops; only the ending presentation advances.</figcaption>
+            </figure>
+            <figure>
+              <button class="screenshot-button" type="button" data-caption="The released ending. Enter or the on-screen prompt begins an ordinary clean new game." aria-label="Open the ending-screen screenshot">
+                <img src="assets/screenshots/10-ending-screen.png" width="480" height="270" alt="Redirect Loop ending screen with restart prompt">
+                <span>Open screenshot</span>
+              </button>
+              <figcaption>The next run starts completely clean.</figcaption>
+            </figure>
+            <figure>
+              <button class="screenshot-button" type="button" data-caption="The ending with reduced presentation effects enabled. Timing and outcome remain identical." aria-label="Open the reduced-effects ending screenshot">
+                <img src="assets/screenshots/12-ending-reduced-effects.png" width="480" height="270" alt="Redirect Loop ending screen with reduced effects enabled">
+                <span>Open screenshot</span>
+              </button>
+              <figcaption>Reduced effects change comfort, never the outcome.</figcaption>
+            </figure>
+          </div>
+
+          <div class="ending-note">
+            <h3>What restart means</h3>
+            <p>Press <kbd>Enter</kbd> or click the ending prompt to begin a completely clean new game. No resources, structures, standing, contract state, or story knowledge carry over. This release does not yet contain a narrative time loop, alternate ending, defense plan, or persuasion system.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta section-shell" aria-labelledby="final-cta-title">
+        <p class="eyebrow">Field guide complete</p>
+        <h2 id="final-cta-title">Your island is waiting.</h2>
+        <p>Keep this guide open in another tab, follow the objective line, and inspect machines whenever the physical item flow becomes unclear.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://rshermanut-rgb.github.io/redirect-loop/">Launch the live game</a>
+          <a class="button button-secondary" href="https://github.com/rshermanut-rgb/redirect-loop-guide">Guide source on GitHub</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p><strong>Redirect Loop Player Field Guide</strong><br>Built from screenshots of the real released Canvas game.</p>
+      <nav aria-label="External links">
+        <a href="https://rshermanut-rgb.github.io/redirect-loop/">Play game</a>
+        <a href="https://github.com/rshermanut-rgb/redirect-loop">Game source</a>
+        <a href="https://github.com/rshermanut-rgb/redirect-loop-guide">Guide source</a>
+      </nav>
+    </footer>
+
+    <dialog id="screenshot-dialog" class="screenshot-dialog" aria-labelledby="dialog-caption">
+      <div class="dialog-toolbar">
+        <span id="dialog-counter"></span>
+        <button id="close-dialog" class="text-button" type="button">Close</button>
+      </div>
+      <img id="dialog-image" src="assets/screenshots/01-opening-screen.png" width="480" height="270" alt="Enlarged Redirect Loop gameplay screenshot">
+      <p id="dialog-caption"></p>
+      <div class="dialog-navigation">
+        <button id="previous-image" class="button button-secondary" type="button">← Previous</button>
+        <button id="next-image" class="button button-secondary" type="button">Next →</button>
+      </div>
+    </dialog>
+  </body>
+</html>
