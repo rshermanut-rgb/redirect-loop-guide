@@ -34,6 +34,11 @@ test("every referenced screenshot exists", async () => {
   await Promise.all(screenshots.map((path) => access(resolve(root, path))));
 });
 
+test("uses the authored game icon as a subpath-safe favicon", async () => {
+  assert.match(html, /<link rel="icon" href="assets\/favicon\.png" type="image\/png">/);
+  await access(resolve(root, "assets/favicon.png"));
+});
+
 test("every screenshot has dimensions and useful alternative text", () => {
   const imageTags = [...html.matchAll(/<img\s+[^>]*>/g)].map((match) => match[0]);
   assert.ok(imageTags.length >= 13);
